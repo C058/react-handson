@@ -13,7 +13,7 @@ module.exports = {
     module: {
       rules: [
         {
-            test: /\.(js|jsx)$/,
+          test: /\.(js|jsx)$/,
           use: {
             // Babel を利用する
             loader: 'babel-loader',
@@ -34,4 +34,4 @@ module.exports = {
       contentBase: 'dist',
       open: true
     }
-  };
+};
