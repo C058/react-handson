@@ -1,12 +1,28 @@
 module.exports = {
-    // モード値を production に設定すると最適化された状態で、
-    // development に設定するとソースマップ有効でJSファイルが出力される
-    mode: "development",
-    entry: [ 
-        __dirname + '/src/app.jsx' 
-    ], 
-    output: { 
-        path: __dirname + '/dist', 
-        filename: 'bundle.js' 
-    }, 
-};
+    mode: 'development',
+    entry: './src/app.jsx',
+    output: {
+      filename: 'bundle.js',
+      path: `${__dirname}/dist`
+    },
+    module: {
+      rules: [
+        {
+            test: /\.(js|jsx)$/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                '@babel/preset-env',
+                '@babel/react'
+              ]
+            }
+          }
+        }
+      ]
+    },
+    devServer: {
+      contentBase: 'dist',
+      open: true
+    }
+  };
