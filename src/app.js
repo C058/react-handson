@@ -43,11 +43,17 @@ class App extends React.Component {
         <ul className="list">
           {/* todoList配列の要素数分ToDoListItemコンポーネントを展開 */}
           {this.state.todoList.map(todo => (
-            <Task key={todo.title} title={todo.title}>{todo.description}</Task>
+            <Task 
+              key={todo.title}
+              title={todo.title}
+              // クリックされたItemをtodoList stateから削除
+              onClick={() => {
+                this.setState({
+                  todoList: this.state.todoList.filter(x => x !== todo)
+                })
+              }}
+            >{todo.description}</Task>
           ))}
-            <Task title="八百屋に行く">じゃがいも、にんじん、玉ねぎを買う</Task>
-            <Task title="肉屋に行く">鶏肉を買う</Task>
-            <Task title="米屋に行く">新之助を買う</Task>
         </ul>
       </div>
     );
