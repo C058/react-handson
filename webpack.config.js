@@ -4,7 +4,7 @@ module.exports = {
     // development に設定するとソースマップ有効でJSファイルが出力される
     mode: 'development',
     // エントリーポイントの設定　最初に読み込まれるファイル
-    entry: './src/app.jsx',
+    entry: './src/app.js',
     // モジュールバンドル後のファイル出力の設定
     output: {
       filename: 'bundle.js',
