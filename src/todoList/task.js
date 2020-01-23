@@ -2,15 +2,21 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 export class Task extends Component {
-  constructor(props) {
-    super(props);
-  }
+
     
   render() {
+    // https://qiita.com/uto-usui/items/a9d17447fe81c17c41fa#%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AE%E5%88%86%E5%89%B2%E4%BB%A3%E5%85%A5
+    const {
+        title,
+        children,
+        ...props
+      } = this.props;
     return (
-        <li className="list-item">
-        <div className="task-title">{this.props.title}</div>
-        <div className="task-description">{this.props.children}</div>
+        // {...props}と書くことで残った設定が展開される
+        //https://qiita.com/Nossa/items/e6f503cbb95c8e6967f8
+        <li className="list-item" {...props}>
+        <div className="task-title">{title}</div>
+        <div className="task-description">{children}</div>
         </li>
     );
   }
