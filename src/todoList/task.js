@@ -10,7 +10,7 @@ export class Task extends Component {
     return (
         <li className="list-item">
         <div className="task-title">{this.props.title}</div>
-        <div className="task-description">{this.props.description}</div>
+        <div className="task-description">{this.props.children}</div>
         </li>
     );
   }
